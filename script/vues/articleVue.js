@@ -1,8 +1,12 @@
 /**
  * Created by Administrator on 2015/7/24.
  */
-var PXCom = require('../components/dialogComponent'),
-    grid = PXCom.grid,
+var //PXCom = require('../components/dialogComponent'),
+    //grid = PXCom.grid,
+    //require .vue文件，通过.vue文件的方式封装组件，返回值为options对象
+    gridComponent = require('../components/grid.vue'),
+    //通过Vue.extend创建组件
+    grid = Vue.extend(gridComponent);
     articleService = require('../services/articleService');
 var articleVue = new Vue({
     el:'.container',
