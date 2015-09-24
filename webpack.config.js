@@ -3,10 +3,21 @@
  */
 var _dirname = './';
 module.exports = {
-    entry: "./script/vues/articleVue.js",
+    entry: {
+        bundle:"./script/vues/articleVue.js"
+    },
     output: {
         path: _dirname + "/dist",
-        filename: "bundle.js"
+        /*
+            要使用webpack的热替换功能则必须正确设置publicPath(其值跟path的最后
+            一级目录名相同就行),执行webpack命令编译之后，启动webpack-dev-server
+             --inline --hot命令启动webpack-dev-server服务器并自动检测热替换，实
+             现自动刷新功能
+         */
+        publicPath: "/dist/",
+        //[name]将会被替换为entry对象的键名，在多实体打包时使用很方便。
+        filename: "[name].js"
+        //filename: "[hash].bundle.js"
     },
     module: {
         loaders: [
@@ -14,6 +25,10 @@ module.exports = {
                 test: /\.vue$/,
                 //使用vue-loader加载器解析.vue文件。vue文件内的css、js代码支持多种预编译语言。如less、sass、coffescript等
                 loader: 'vue-loader'
+            },
+            {
+                test:/\.html$/,
+                loader:'html-loader'
             }
         ]
     },
