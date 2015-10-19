@@ -3,7 +3,7 @@
 	    width:600px;
 	    margin:10px 0;
 		border-collapse:collapse;
-		border:2px solid green;
+		border:2px solid #33acfe;
 		-webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;

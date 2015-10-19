@@ -1,2 +1,540 @@
-!function(e){function t(r){if(n[r])return n[r].exports;var a=n[r]={exports:{},id:r,loaded:!1};return e[r].call(a.exports,a,a.exports,t),a.loaded=!0,a.exports}var n={};return t.m=e,t.c=n,t.p="",t(0)}([function(e,t,n){var r=n(7),a=Vue.extend(r);articleService=n(9);var o=(new Vue({el:".container",data:{articles:articleService.fetchData()},methods:{addArticle:function(e,t){var n=this.articles,r=parseInt(n[n.length-1].id)>8?parseInt(n[n.length-1].id)+1+"":"0"+(parseInt(n[n.length-1].id)+1);this.articles.push({id:r,title:e,content:t})},removeArticle:function(e){for(var t=this.articles,n=0;n<t.length;n+=1)t[n].id===e&&t.splice(n,1)},testhandler:function(){}}}),new Vue({el:".component-wrap",data:{firstData:{tabData:[{name:"组件实例数据A",age:"18"},{name:"组件实例数据B",age:"22"}]},secondData:{tabData:[{name:"组件实例数据C",age:"18"},{name:"组件实例数据D",age:"22"}]}}})),i=new a,s=o.firstData.tabData;console.log(s),i.renderTable(o.firstData.tabData),i.$mount(".px-test"),s.push({name:"组件实例数据E",age:"25"}),i.renderTable(s);var u=new a,c=o.secondData.tabData;c.push({name:"组件实例数据F",age:"30"}),u.$mount(".component-wrap .px-test"),u.renderTable(c)},,function(e,t,n){t=e.exports=n(3)(),t.push([e.id,".px-ui-table{width:600px;margin:10px 0;border-collapse:collapse;border:2px solid green;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.px-ui-table .px-ui-tr{background-color:#f9f9f9}.px-ui-table .px-ui-td{height:40px;line-height:40px;border:1px solid #fff;text-align:center}.px-ui-table .px-ui-tr:hover{border:1px solid green}",""])},function(e,t){e.exports=function(){var e=[];return e.toString=function(){for(var e=[],t=0;t<this.length;t++){var n=this[t];n[2]?e.push("@media "+n[2]+"{"+n[1]+"}"):e.push(n[1])}return e.join("")},e.i=function(t,n){"string"==typeof t&&(t=[[null,t,""]]);for(var r={},a=0;a<this.length;a++){var o=this[a][0];"number"==typeof o&&(r[o]=!0)}for(a=0;a<t.length;a++){var i=t[a];"number"==typeof i[0]&&r[i[0]]||(n&&!i[2]?i[2]=n:n&&(i[2]="("+i[2]+") and ("+n+")"),e.push(i))}},e}},function(e,t){e.exports="<table class=px-ui-table><caption></caption><tbody><tr class=px-ui-tr v-repeat=compData v-on=click:toggle(this.$el)><td class=px-ui-td v-text=name><td class=px-ui-td v-text=age></table>"},function(e,t,n){function r(e,t){for(var n=0;n<e.length;n++){var r=e[n],a=p[r.id];if(a){a.refs++;for(var o=0;o<a.parts.length;o++)a.parts[o](r.parts[o]);for(;o<r.parts.length;o++)a.parts.push(s(r.parts[o],t))}else{for(var i=[],o=0;o<r.parts.length;o++)i.push(s(r.parts[o],t));p[r.id]={id:r.id,refs:1,parts:i}}}}function a(e){for(var t=[],n={},r=0;r<e.length;r++){var a=e[r],o=a[0],i=a[1],s=a[2],u=a[3],c={css:i,media:s,sourceMap:u};n[o]?n[o].parts.push(c):t.push(n[o]={id:o,parts:[c]})}return t}function o(){var e=document.createElement("style"),t=h();return e.type="text/css",t.appendChild(e),e}function i(){var e=document.createElement("link"),t=h();return e.rel="stylesheet",t.appendChild(e),e}function s(e,t){var n,r,a;if(t.singleton){var s=g++;n=v||(v=o()),r=u.bind(null,n,s,!1),a=u.bind(null,n,s,!0)}else e.sourceMap&&"function"==typeof URL&&"function"==typeof URL.createObjectURL&&"function"==typeof URL.revokeObjectURL&&"function"==typeof Blob&&"function"==typeof btoa?(n=i(),r=l.bind(null,n),a=function(){n.parentNode.removeChild(n),n.href&&URL.revokeObjectURL(n.href)}):(n=o(),r=c.bind(null,n),a=function(){n.parentNode.removeChild(n)});return r(e),function(t){if(t){if(t.css===e.css&&t.media===e.media&&t.sourceMap===e.sourceMap)return;r(e=t)}else a()}}function u(e,t,n,r){var a=n?"":r.css;if(e.styleSheet)e.styleSheet.cssText=m(t,a);else{var o=document.createTextNode(a),i=e.childNodes;i[t]&&e.removeChild(i[t]),i.length?e.insertBefore(o,i[t]):e.appendChild(o)}}function c(e,t){var n=t.css,r=t.media;t.sourceMap;if(r&&e.setAttribute("media",r),e.styleSheet)e.styleSheet.cssText=n;else{for(;e.firstChild;)e.removeChild(e.firstChild);e.appendChild(document.createTextNode(n))}}function l(e,t){var n=t.css,r=(t.media,t.sourceMap);r&&(n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(r))))+" */");var a=new Blob([n],{type:"text/css"}),o=e.href;e.href=URL.createObjectURL(a),o&&URL.revokeObjectURL(o)}var p={},d=function(e){var t;return function(){return"undefined"==typeof t&&(t=e.apply(this,arguments)),t}},f=d(function(){return/msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase())}),h=d(function(){return document.head||document.getElementsByTagName("head")[0]}),v=null,g=0;e.exports=function(e,t){t=t||{},"undefined"==typeof t.singleton&&(t.singleton=f());var n=a(e);return r(n,t),function(e){for(var o=[],i=0;i<n.length;i++){var s=n[i],u=p[s.id];u.refs--,o.push(u)}if(e){var c=a(e);r(c,t)}for(var i=0;i<o.length;i++){var u=o[i];if(0===u.refs){for(var l=0;l<u.parts.length;l++)u.parts[l]();delete p[u.id]}}}};var m=function(){var e=[];return function(t,n){return e[t]=n,e.filter(Boolean).join("\n")}}()},function(e,t,n){var r=n(2);"string"==typeof r&&(r=[[e.id,r,""]]);n(5)(r,{});r.locals&&(e.exports=r.locals)},function(e,t,n){n(6),e.exports=n(8),e.exports.template=n(4)},function(e,t){e.exports={data:function(){return{compData:[{name:"组件实例数据C",age:"18"},{name:"组件实例数据D",age:"22"}]}},methods:{renderTable:function(e){this.$data.compData=e},toggle:function(e){var t=e.getAttribute("selected");t?(e.style.backgroundColor="",e.removeAttribute("selected")):(e.style.backgroundColor="green",e.setAttribute("selected",1))}}}},function(e,t){var n=function(){function e(){var e=[{id:"01",title:"AngularJS",content:"Angular 是一个NB的框架!"},{id:"02",title:"VueJS",content:"VueJS 是一个轻量级的面向组件开发的灵活框架!"},{id:"03",title:"jQuery",content:"jQuery 是一个极大的简化了开发人员对DOM操作并处理了复杂的框浏览器兼容性的高效的JS库!"}];return e}return{fetchData:e}}();e.exports=n}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+/******/
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/dist/";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/*!***********************************!*\
+  !*** ./script/vues/articleVue.js ***!
+  \***********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by Administrator on 2015/7/24.
+	 */
+	var //PXCom = require('../components/dialogComponent'),
+	    //grid = PXCom.grid,
+	    //require .vue文件，通过.vue文件的方式封装组件，返回值为options对象
+	    gridComponent = __webpack_require__(/*! ../components/grid.vue */ 2),
+	    //通过Vue.extend创建组件
+	    grid = Vue.extend(gridComponent);
+	    articleService = __webpack_require__(/*! ../services/articleService */ 9);
+	var articleVue = new Vue({
+	    el:'.container',
+	    data:{
+	        articles:articleService.fetchData()
+	    },
+	    methods:{
+	        addArticle:function(title,content){
+	            var articles = this.articles,
+	                id = parseInt(articles[articles.length-1].id)>8?(parseInt(articles[articles.length-1].id)+1)+"":'0'+(parseInt(articles[articles.length-1].id)+1);
+	            this.articles.push({id:id,title:title,content:content});
+	        },
+	        removeArticle:function(id){
+	            var articles = this.articles;
+	            for(var i = 0;i<articles.length;i+=1){
+	                if(articles[i].id===id){
+	                    articles.splice(i,1);
+	                }
+	            }
+	        },
+	        testhandler:function(){
+	        }
+	    }
+	});
+	var comVue = new Vue({
+	    el:'.component-wrap',
+	    data:{
+	        firstData:{
+	            tabData:[
+	            {name:'组件实例数据A',age:'18'},
+	            {name:'组件实例数据B',age:'22'}
+	            ]
+	        },
+	        secondData:{
+	            tabData:[
+	                {name:'组件实例数据C',age:'18'},
+	                {name:'组件实例数据D',age:'22'}
+	            ]
+	        }
+	    }
+	});
+	
+	var myGrid = new grid;
+	var curData = comVue.firstData.tabData;
+	console.log(curData);
+	myGrid.renderTable(comVue.firstData.tabData);
+	myGrid.$mount('.px-test');
+	curData.push({name:'组件实例数据E',age:'25'});
+	myGrid.renderTable(curData);
+	
+	var myGrid1 = new grid;
+	var curData1 = comVue.secondData.tabData;
+	curData1.push({name:'组件实例数据F',age:'30'});
+	myGrid1.$mount('.component-wrap .px-test');
+	myGrid1.renderTable(curData1);
+
+/***/ },
+/* 1 */,
+/* 2 */
+/*!************************************!*\
+  !*** ./script/components/grid.vue ***!
+  \************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(/*! -!style!css!less!./../../~/vue-loader/lib/selector.js?type=style&index=0!./grid.vue */ 3)
+	module.exports = __webpack_require__(/*! -!./../../~/vue-loader/lib/selector.js?type=script&index=0!./grid.vue */ 7)
+	module.exports.template = __webpack_require__(/*! -!vue-html!./../../~/vue-loader/lib/selector.js?type=template&index=0!./grid.vue */ 8)
+
+
+/***/ },
+/* 3 */
+/*!**************************************************************************************************************************************!*\
+  !*** ./~/style-loader!./~/css-loader!./~/less-loader!./~/vue-loader/lib/selector.js?type=style&index=0!./script/components/grid.vue ***!
+  \**************************************************************************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(/*! !./../../~/css-loader!./../../~/less-loader!./../../~/vue-loader/lib/selector.js?type=style&index=0!./grid.vue */ 4);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(/*! ./../../~/style-loader/addStyles.js */ 6)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./grid.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/less-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./grid.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 4 */
+/*!*********************************************************************************************************************!*\
+  !*** ./~/css-loader!./~/less-loader!./~/vue-loader/lib/selector.js?type=style&index=0!./script/components/grid.vue ***!
+  \*********************************************************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(/*! ./../../~/css-loader/lib/css-base.js */ 5)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".px-ui-table {\n  width: 600px;\n  margin: 10px 0;\n  border-collapse: collapse;\n  border: 2px solid green;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.px-ui-table .px-ui-tr {\n  background-color: #f9f9f9;\n}\n.px-ui-table .px-ui-td {\n  height: 40px;\n  line-height: 40px;\n  border: 1px solid #fff;\n  text-align: center;\n}\n.px-ui-table .px-ui-tr:hover {\n  border: 1px solid green;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 5 */
+/*!**************************************!*\
+  !*** ./~/css-loader/lib/css-base.js ***!
+  \**************************************/
+/***/ function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+	
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+	
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 6 */
+/*!*************************************!*\
+  !*** ./~/style-loader/addStyles.js ***!
+  \*************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0;
+	
+	module.exports = function(list, options) {
+		if(true) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+		}
+	
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+	
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+	
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
+			}
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
+	
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
+	
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+	
+	function createStyleElement() {
+		var styleElement = document.createElement("style");
+		var head = getHeadElement();
+		styleElement.type = "text/css";
+		head.appendChild(styleElement);
+		return styleElement;
+	}
+	
+	function createLinkElement() {
+		var linkElement = document.createElement("link");
+		var head = getHeadElement();
+		linkElement.rel = "stylesheet";
+		head.appendChild(linkElement);
+		return linkElement;
+	}
+	
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+	
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement());
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else if(obj.sourceMap &&
+			typeof URL === "function" &&
+			typeof URL.createObjectURL === "function" &&
+			typeof URL.revokeObjectURL === "function" &&
+			typeof Blob === "function" &&
+			typeof btoa === "function") {
+			styleElement = createLinkElement();
+			update = updateLink.bind(null, styleElement);
+			remove = function() {
+				styleElement.parentNode.removeChild(styleElement);
+				if(styleElement.href)
+					URL.revokeObjectURL(styleElement.href);
+			};
+		} else {
+			styleElement = createStyleElement();
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				styleElement.parentNode.removeChild(styleElement);
+			};
+		}
+	
+		update(obj);
+	
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+	
+	var replaceText = (function () {
+		var textStore = [];
+	
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+	
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+	
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+	
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+		var sourceMap = obj.sourceMap;
+	
+		if(media) {
+			styleElement.setAttribute("media", media)
+		}
+	
+		if(styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+	
+	function updateLink(linkElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+		var sourceMap = obj.sourceMap;
+	
+		if(sourceMap) {
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+	
+		var blob = new Blob([css], { type: "text/css" });
+	
+		var oldSrc = linkElement.href;
+	
+		linkElement.href = URL.createObjectURL(blob);
+	
+		if(oldSrc)
+			URL.revokeObjectURL(oldSrc);
+	}
+
+
+/***/ },
+/* 7 */
+/*!***************************************************************************************!*\
+  !*** ./~/vue-loader/lib/selector.js?type=script&index=0!./script/components/grid.vue ***!
+  \***************************************************************************************/
+/***/ function(module, exports) {
+
+	module.exports = {
+			data:function(){
+	            return {
+	                compData:[{name:'组件实例数据C',age:'18'},
+	                    {name:'组件实例数据D',age:'22'}]
+	            };
+	        },
+	        methods:{
+	            renderTable:function(data){
+	                this.$data.compData = data;
+	            },
+	            toggle:function(item){
+	                var flag = item.getAttribute('selected');
+	                if(!flag){
+	                    item.style.backgroundColor = "green";
+	                    item.setAttribute('selected',1);
+	                }else{
+	                    item.style.backgroundColor = "";
+	                    item.removeAttribute('selected');
+	                }
+	            }
+	        }
+		};
+
+/***/ },
+/* 8 */
+/*!*************************************************************************************************************!*\
+  !*** ./~/vue-html-loader!./~/vue-loader/lib/selector.js?type=template&index=0!./script/components/grid.vue ***!
+  \*************************************************************************************************************/
+/***/ function(module, exports) {
+
+	module.exports = "<table class=\"px-ui-table\">\r\n\t\t<caption></caption>\r\n\t\t<tbody>\r\n\t\t\t<tr class=\"px-ui-tr\" v-repeat=\"compData\" v-on=\"click:toggle(this.$el)\">\r\n\t\t\t\t<td class=\"px-ui-td\" v-text=\"name\"></td><td class=\"px-ui-td\" v-text=\"age\"></td>\r\n\t\t\t</tr>\r\n\t\t</tbody>\r\n\t</table>";
+
+/***/ },
+/* 9 */
+/*!*******************************************!*\
+  !*** ./script/services/articleService.js ***!
+  \*******************************************/
+/***/ function(module, exports) {
+
+	/**
+	 * Created by Administrator on 2015/7/24.
+	 */
+	var articleService = (function(){
+	    function fetchData(){
+	        var data = [
+	            {
+	                id:'01',
+	                title:'AngularJS',
+	                content:'Angular 是一个NB的框架!'
+	            },
+	            {
+	                id:'02',
+	                title:'VueJS',
+	                content:'VueJS 是一个轻量级的面向组件开发的灵活框架!'
+	            },
+	            {
+	                id:'03',
+	                title:'jQuery',
+	                content:'jQuery 是一个极大的简化了开发人员对DOM操作并处理了复杂的框浏览器兼容性的高效的JS库!'
+	            }
+	        ];
+	        return data;
+	    }
+	    return {
+	        fetchData:fetchData
+	    };
+	}());
+	module.exports = articleService;
+
+/***/ }
+/******/ ]);
 //# sourceMappingURL=bundle.js.map
