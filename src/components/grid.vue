@@ -27,8 +27,8 @@
 	<table class="px-ui-table">
 		<caption></caption>
 		<tbody>
-			<tr class="px-ui-tr" v-repeat="compData" v-on="click:toggle(this.$el)">
-				<td class="px-ui-td" v-text="name"></td><td class="px-ui-td" v-text="age"></td>
+			<tr class="px-ui-tr" v-for="d in compData" v-on="click:toggle(this.$el)">
+				<td class="px-ui-td" v-text="d.name"></td><td class="px-ui-td" v-text="d.age"></td>
 			</tr>
 		</tbody>
 	</table>
