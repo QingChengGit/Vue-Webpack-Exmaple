@@ -3,50 +3,13 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Vue Example</title>
-
 </head>
 <body>
     <div class="container">
-        <input type="text" v-model="searhPhrase" />
-        <ul class="articles-list">
-            <li class="articles-item" v-repeat="article:articles | filterBy searhPhrase">
-                <h3 class="article-title" v-text="article.title"></h3>
-                <p class="article-content" v-text="article.content"></p>
-                <a href="javascript:void(0);" v-on="click:removeArticle(article.id)">删除</a>
-            </li>
-        </ul>
-        <div>
-            <a>添加文章</a>
-        </div>
-        <px-dialog></px-dialog>
-        <px-grid class="px-test"></px-grid>
-
-        <div class="another"></div>
-        <div v-my-directive="articles"></div>
+        <!-- :table-data 动态绑定dataArr数据给子组件,当dataArr发生变化时子组件会相应响应 -->
+        <q-grid class="px-table" :table-data="dataArr"></q-grid>
     </div>
-    <div class="component-wrap">
-        <px-grid class="px-table"></px-grid>
-        <px-grid class="px-test"></px-grid>
-    </div>
-    <script src="script/libs/vue.min.js"></script>
-    <!--<script src="script/components/dialogComponent.js"></script>
-    <script src="script/services/articleService.js"></script>-->
+    <script src="src/libs/vue.min.js"></script>
     <script src="dist/bundle.js"></script>
-    <!--<script type="text/javascript">
-        var grid = PXComponents.grid;
-        var myGrid = new grid;
-        var curData = comVue.firstData.tabData;
-        console.log(curData);
-        myGrid.renderTable(comVue.firstData.tabData);
-        myGrid.$mount('.px-test');
-        curData.push({name:'组件实例数据E',age:'25'});
-        myGrid.renderTable(curData);
-
-        var myGrid1 = new grid;
-        var curData1 = comVue.secondData.tabData;
-        curData1.push({name:'组件实例数据F',age:'30'});
-        myGrid1.$mount('.component-wrap .px-test');
-        myGrid1.renderTable(curData1);
-    </script>-->
 </body>
 </html>

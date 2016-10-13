@@ -18,11 +18,10 @@ function merge(to, from) {
             if(!to.hasOwnProperty(p)){
                 to[p] = fromVal;
             }else{
-                to[p] = from[p];
-                //此处还需好好考虑下
-                /*if(typeDetect.isLikeObject(toVal) && typeDetect.isLikeObject(fromVal)){
+                if(typeDetect.isLikeObject(toVal) && typeDetect.isLikeObject(fromVal)){
+                    //if toVal and fromVal are object/function then merge them
                     merge(toVal, fromVal);
-                }*/
+                }
             }
         }
     }

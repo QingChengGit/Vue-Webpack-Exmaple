@@ -17,7 +17,7 @@
             border:1px solid #fff;
             text-align:center;
         }
-        .px-ui-tr:hover{
+        .px-ui-tr-selected{
             border:1px solid green;
         }
 	}
@@ -27,8 +27,9 @@
 	<table class="px-ui-table">
 		<caption></caption>
 		<tbody>
-			<tr class="px-ui-tr" v-for="d in compData" v-on="click:toggle(this.$el)">
+			<tr class="px-ui-tr" v-for="d in tableData" @click="toggle">
 				<td class="px-ui-td" v-text="d.name"></td><td class="px-ui-td" v-text="d.age"></td>
+				<td class="delete-btn" v-on:click="removeItem(d, $event)"></td>
 			</tr>
 		</tbody>
 	</table>
@@ -36,25 +37,16 @@
 
 <script>
 module.exports = {
-		data:function(){
-            return {
-                compData:[{name:'组件实例数据C',age:'18'},
-                    {name:'组件实例数据D',age:'22'}]
-            };
-        },
+        props: ['table-data'],
         methods:{
-            renderTable:function(data){
-                this.$data.compData = data;
+            removeItem:function(item){
+                console.log(this.tableData);
+                console.log('======');
+                console.log(item);
+                this.tableData.$remove(item);ss
             },
-            toggle:function(item){
-                var flag = item.getAttribute('selected');
-                if(!flag){
-                    item.style.backgroundColor = "green";
-                    item.setAttribute('selected',1);
-                }else{
-                    item.style.backgroundColor = "";
-                    item.removeAttribute('selected');
-                }
+            toggle:function(){
+
             }
         }
 	};
