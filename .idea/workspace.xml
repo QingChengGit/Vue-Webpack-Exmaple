@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d8d4394-be90-44bf-9759-3bddc5b3db37" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/grid.vue" afterPath="$PROJECT_DIR$/src/components/grid.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/mergeObject.js" afterPath="$PROJECT_DIR$/src/util/mergeObject.js" />
     </list>
     <ignored path="vueProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -363,12 +360,12 @@
       <updated>1476113271263</updated>
       <workItem from="1476113272548" duration="2287000" />
       <workItem from="1476279443141" duration="10839000" />
-      <workItem from="1476372777741" duration="3142000" />
+      <workItem from="1476372777741" duration="3441000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16268000" />
+    <option name="totallyTimeSpent" value="16567000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="810" extended-state="0" />
