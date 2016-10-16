@@ -25,29 +25,34 @@
 
 <template>
 	<table class="px-ui-table">
-		<caption></caption>
-		<tbody>
-			<tr class="px-ui-tr" v-for="d in tableData" @click="toggle">
-				<td class="px-ui-td" v-text="d.name"></td><td class="px-ui-td" v-text="d.age"></td>
-				<td class="delete-btn" v-on:click="removeItem(d, $event)"></td>
-			</tr>
-		</tbody>
-	</table>
+        <caption></caption>
+        <tbody>
+            <tr class="px-ui-tr" v-for="d in tableData" @click="toggle">
+                <td class="px-ui-td" v-text="d.name"></td><td class="px-ui-td" v-text="d.age"></td>
+                <td class="delete-btn" v-on:click="removeItem(d, $event)"></td>
+            </tr>
+        </tbody>
+    </table>
 </template>
 
 <script>
 module.exports = {
-        props: ['table-data'],
-        methods:{
-            removeItem:function(item){
-                console.log(this.tableData);
-                console.log('======');
-                console.log(item);
-                this.tableData.$remove(item);ss
-            },
-            toggle:function(){
+    props: {
+        tableData: Array
+    },
+    created: function() {
+        console.log(this.tableData);
+    },
+    methods:{
+        removeItem:function(item){
+            console.log(this.tableData);
+            console.log('======');
+            console.log(item);
+            this.tableData.$remove(item);
+        },
+        toggle:function(){
 
-            }
         }
-	};
+    }
+}
 </script>
