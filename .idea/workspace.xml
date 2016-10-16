@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d8d4394-be90-44bf-9759-3bddc5b3db37" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/package.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/bundle.js" afterPath="$PROJECT_DIR$/dist/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/bundle.js.map" afterPath="$PROJECT_DIR$/dist/bundle.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.js" afterPath="$PROJECT_DIR$/src/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/grid.vue" afterPath="$PROJECT_DIR$/src/components/grid.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
     </list>
     <ignored path="vueProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -325,12 +317,12 @@
       <workItem from="1476604877935" duration="2029000" />
       <workItem from="1476608260242" duration="1657000" />
       <workItem from="1476610198087" duration="2435000" />
-      <workItem from="1476613182287" duration="7159000" />
+      <workItem from="1476613182287" duration="7460000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47068000" />
+    <option name="totallyTimeSpent" value="47369000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="805" extended-state="0" />
