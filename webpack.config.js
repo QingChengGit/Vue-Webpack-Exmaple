@@ -1,7 +1,9 @@
 /**
  * Created by Administrator on 2015/9/19.
  */
-var _dirname = './';
+var path = require('path'),
+    _dirname = './';
+
 module.exports = {
     entry: {
         bundle: "./src/app.js"
@@ -28,6 +30,15 @@ module.exports = {
             }
         ]
     },
-
+    babel: {
+        presets: ['es2015'],
+        plugins: ['transform-runtime'],
+        //当打包脚本不在项目跟目录下时,可以通过此设置插件的解析路劲!
+        filename: path.resolve('node_modules')
+    },
+    resolveLoader: {
+        //设置解析loader的根路径,如果打包脚本在项目根目录则可以不设置此项!
+        root: path.resolve('node_modules')
+    },
     devtool:'source-map'//设置此属性，使用webpack打包时会自动生成输出文件对应的resource map文件
 };

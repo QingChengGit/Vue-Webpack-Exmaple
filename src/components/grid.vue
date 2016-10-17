@@ -29,7 +29,7 @@
         <tbody>
             <tr class="px-ui-tr" v-for="d in tableData" @click="toggle">
                 <td class="px-ui-td" v-text="d.name"></td><td class="px-ui-td" v-text="d.age"></td>
-                <td class="delete-btn" v-on:click="removeItem(d, $event)"></td>
+                <td class="delete-btn" v-on:click="removeItem(d, $event)">删除</td>
             </tr>
         </tbody>
     </table>
