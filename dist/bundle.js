@@ -42,12 +42,15 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
+/*!********************************!*\
+  !*** ../vueProject/src/app.js ***!
+  \********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
 	 * Created by qingcheng on 16/10/14.
 	 */
-	var gridComponent = __webpack_require__(1),
+	var gridComponent = __webpack_require__(/*! ./components/grid.vue */ 1),
 	    demo;
 	
 	Vue.config.debug = true;
@@ -66,22 +69,32 @@
 	    },
 	    components: {
 	        'grid-component': gridComponent
+	    },
+	    methods: {
+	        getSelectedData: function(data) {
+	            "use strict";
+	            console.log('获取grid子组件选中的数据:');
+	            console.log('name:' + data.name + ',age:' + data.age);
+	        }
 	    }
 	});
 
 /***/ },
 /* 1 */
+/*!*********************************************!*\
+  !*** ../vueProject/src/components/grid.vue ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(2)
-	__vue_script__ = __webpack_require__(6)
+	__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!./../../../test/~/.8.5.4@vue-loader/lib/style-rewriter.js!less!./../../../test/~/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./grid.vue */ 2)
+	__vue_script__ = __webpack_require__(/*! !babel-loader!./../../../test/~/.8.5.4@vue-loader/lib/selector.js?type=script&index=0!./grid.vue */ 6)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] ..\\vueProject\\src\\components\\grid.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(9)
+	  console.warn("[vue-loader] ../vueProject/src/components/grid.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(/*! !vue-html-loader!./../../../test/~/.8.5.4@vue-loader/lib/selector.js?type=template&index=0!./grid.vue */ 9)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -97,7 +110,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0eb1080c/grid.vue"
+	  var id = "_v-64070a0c/grid.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -107,22 +120,25 @@
 
 /***/ },
 /* 2 */
+/*!**************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/.1.0.0@vue-style-loader!./~/.0.23.1@css-loader?sourceMap!./~/.8.5.4@vue-loader/lib/style-rewriter.js!./~/.2.2.3@less-loader!./~/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!../vueProject/src/components/grid.vue ***!
+  \**************************************************************************************************************************************************************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(3);
+	var content = __webpack_require__(/*! !./../../../test/~/.0.23.1@css-loader?sourceMap!./../../../test/~/.8.5.4@vue-loader/lib/style-rewriter.js!./../../../test/~/.2.2.3@less-loader!./../../../test/~/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./grid.vue */ 3);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(5)(content, {});
+	var update = __webpack_require__(/*! ./../../../test/~/.1.0.0@vue-style-loader/addStyles.js */ 5)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../pack/node_modules/.npminstall/css-loader/0.16.0/css-loader/index.js?sourceMap!./../../../pack/node_modules/.npminstall/vue-loader/8.5.4/vue-loader/lib/style-rewriter.js!./../../../pack/node_modules/.npminstall/less-loader/2.2.3/less-loader/index.js!./../../../pack/node_modules/.npminstall/vue-loader/8.5.4/vue-loader/lib/selector.js?type=style&index=0!./grid.vue", function() {
-				var newContent = require("!!./../../../pack/node_modules/.npminstall/css-loader/0.16.0/css-loader/index.js?sourceMap!./../../../pack/node_modules/.npminstall/vue-loader/8.5.4/vue-loader/lib/style-rewriter.js!./../../../pack/node_modules/.npminstall/less-loader/2.2.3/less-loader/index.js!./../../../pack/node_modules/.npminstall/vue-loader/8.5.4/vue-loader/lib/selector.js?type=style&index=0!./grid.vue");
+			module.hot.accept("!!./../../../test/node_modules/.0.23.1@css-loader/index.js?sourceMap!./../../../test/node_modules/.8.5.4@vue-loader/lib/style-rewriter.js!./../../../test/node_modules/.2.2.3@less-loader/index.js!./../../../test/node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./grid.vue", function() {
+				var newContent = require("!!./../../../test/node_modules/.0.23.1@css-loader/index.js?sourceMap!./../../../test/node_modules/.8.5.4@vue-loader/lib/style-rewriter.js!./../../../test/node_modules/.2.2.3@less-loader/index.js!./../../../test/node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./grid.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -133,20 +149,26 @@
 
 /***/ },
 /* 3 */
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./~/.0.23.1@css-loader?sourceMap!./~/.8.5.4@vue-loader/lib/style-rewriter.js!./~/.2.2.3@less-loader!./~/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!../vueProject/src/components/grid.vue ***!
+  \**********************************************************************************************************************************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(4)();
+	exports = module.exports = __webpack_require__(/*! ./../../../test/~/.0.23.1@css-loader/lib/css-base.js */ 4)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".px-ui-table {\n  width: 600px;\n  margin: 10px 0;\n  border-collapse: collapse;\n  border: 2px solid #33acfe;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.px-ui-table .px-ui-tr {\n  background-color: #f9f9f9;\n}\n.px-ui-table .px-ui-td {\n  height: 40px;\n  line-height: 40px;\n  border: 1px solid #fff;\n  text-align: center;\n}\n.px-ui-table .px-ui-tr-selected {\n  background-color: green;\n}\n", "", {"version":3,"sources":["/../../../vue-loader/8.5.4/vue-loader/lib/style-rewriter.js!D:/work/repository/pack/node_modules/.npminstall/less-loader/2.2.3/less-loader/index.js!D:/work/repository/pack/node_modules/.npminstall/vue-loader/8.5.4/vue-loader/lib/selector.js?type=style&index=0!D:/work/repository/vueProject/src/components/grid.vue"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,eAAe;EACf,0BAA0B;EAC1B,0BAA0B;EAC1B,0BAA0B;EAC1B,uBAAuB;EACvB,sBAAsB;EACtB,kBAAkB;CACnB;AACD;EACE,0BAA0B;CAC3B;AACD;EACE,aAAa;EACb,kBAAkB;EAClB,uBAAuB;EACvB,mBAAmB;CACpB;AACD;EACE,wBAAwB;CACzB","file":"grid.vue","sourcesContent":[".px-ui-table {\n  width: 600px;\n  margin: 10px 0;\n  border-collapse: collapse;\n  border: 2px solid #33acfe;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.px-ui-table .px-ui-tr {\n  background-color: #f9f9f9;\n}\n.px-ui-table .px-ui-td {\n  height: 40px;\n  line-height: 40px;\n  border: 1px solid #fff;\n  text-align: center;\n}\n.px-ui-table .px-ui-tr-selected {\n  background-color: green;\n}\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".px-table-component {\n  width: 600px;\n}\n.px-table-component .table-operate-area {\n  margin: 20px 0;\n}\n.px-table-component .search-input {\n  width: 200px;\n  height: 40px;\n  outline: none;\n}\n.px-table-component .add-btn {\n  display: inline-block;\n  width: 80px;\n  height: 40px;\n  line-height: 40px;\n  margin-left: 15px;\n  color: #fff;\n  background-color: #4592d7;\n  text-align: center;\n  vertical-align: middle;\n  cursor: pointer;\n}\n.px-ui-table {\n  width: 100%;\n  margin: 10px 0;\n  border-collapse: collapse;\n  border: 2px solid #33acfe;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.px-ui-table .px-ui-tr {\n  background-color: #f9f9f9;\n}\n.px-ui-table .px-ui-td {\n  height: 40px;\n  line-height: 40px;\n  border: 1px solid #fff;\n  text-align: center;\n}\n.px-ui-table .px-ui-tr-selected {\n  background-color: green;\n}\n.px-ui-table .select {\n  color: red;\n}\n.px-ui-table .delete-btn {\n  color: dodgerblue;\n}\n", "", {"version":3,"sources":["/../vueProject/src/components/grid.vue"],"names":[],"mappings":"AAAA;EACE,aAAa;CACd;AACD;EACE,eAAe;CAChB;AACD;EACE,aAAa;EACb,aAAa;EACb,cAAc;CACf;AACD;EACE,sBAAsB;EACtB,YAAY;EACZ,aAAa;EACb,kBAAkB;EAClB,kBAAkB;EAClB,YAAY;EACZ,0BAA0B;EAC1B,mBAAmB;EACnB,uBAAuB;EACvB,gBAAgB;CACjB;AACD;EACE,YAAY;EACZ,eAAe;EACf,0BAA0B;EAC1B,0BAA0B;EAC1B,0BAA0B;EAC1B,uBAAuB;EACvB,sBAAsB;EACtB,kBAAkB;CACnB;AACD;EACE,0BAA0B;CAC3B;AACD;EACE,aAAa;EACb,kBAAkB;EAClB,uBAAuB;EACvB,mBAAmB;CACpB;AACD;EACE,wBAAwB;CACzB;AACD;EACE,WAAW;CACZ;AACD;EACE,kBAAkB;CACnB","file":"grid.vue","sourcesContent":[".px-table-component {\n  width: 600px;\n}\n.px-table-component .table-operate-area {\n  margin: 20px 0;\n}\n.px-table-component .search-input {\n  width: 200px;\n  height: 40px;\n  outline: none;\n}\n.px-table-component .add-btn {\n  display: inline-block;\n  width: 80px;\n  height: 40px;\n  line-height: 40px;\n  margin-left: 15px;\n  color: #fff;\n  background-color: #4592d7;\n  text-align: center;\n  vertical-align: middle;\n  cursor: pointer;\n}\n.px-ui-table {\n  width: 100%;\n  margin: 10px 0;\n  border-collapse: collapse;\n  border: 2px solid #33acfe;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.px-ui-table .px-ui-tr {\n  background-color: #f9f9f9;\n}\n.px-ui-table .px-ui-td {\n  height: 40px;\n  line-height: 40px;\n  border: 1px solid #fff;\n  text-align: center;\n}\n.px-ui-table .px-ui-tr-selected {\n  background-color: green;\n}\n.px-ui-table .select {\n  color: red;\n}\n.px-ui-table .delete-btn {\n  color: dodgerblue;\n}\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ },
 /* 4 */
+/*!**********************************************!*\
+  !*** ./~/.0.23.1@css-loader/lib/css-base.js ***!
+  \**********************************************/
 /***/ function(module, exports) {
 
 	/*
@@ -203,6 +225,9 @@
 
 /***/ },
 /* 5 */
+/*!************************************************!*\
+  !*** ./~/.1.0.0@vue-style-loader/addStyles.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -228,7 +253,7 @@
 		styleElementsInsertedAtTop = [];
 	
 	module.exports = function(list, options) {
-		if(false) {
+		if(true) {
 			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
 		}
 	
@@ -425,79 +450,138 @@
 
 /***/ },
 /* 6 */
+/*!*******************************************************************************************************************************!*\
+  !*** ./~/.6.2.5@babel-loader!./~/.8.5.4@vue-loader/lib/selector.js?type=script&index=0!../vueProject/src/components/grid.vue ***!
+  \*******************************************************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+	
 	// <style lang="less">
-	// 	.px-ui-table{
-	// 	    width:600px;
-	// 	    margin:10px 0;
-	// 		border-collapse:collapse;
-	// 		border:2px solid #33acfe;
+	//     .px-table-component {
+	//         width: 600px;
+	//         .table-operate-area {
+	//             margin: 20px 0;
+	//         }
+	//         .search-input {
+	//             width: 200px;
+	//             height: 40px;
+	//             outline: none;
+	//         }
+	//         .add-btn {
+	//             display: inline-block;
+	//             width: 80px;
+	//             height: 40px;
+	//             line-height: 40px;
+	//             margin-left: 15px;
+	//             color: #fff;
+	//             background-color: #4592d7;
+	//             text-align: center;
+	//             vertical-align: middle;
+	//             cursor: pointer;
+	//         }
+	//     }
+	// 	.px-ui-table {
+	// 	    width: 100%;
+	// 	    margin: 10px 0;
+	// 		border-collapse: collapse;
+	// 		border: 2px solid #33acfe;
 	// 		-webkit-user-select: none;
 	//         -moz-user-select: none;
 	//         -ms-user-select: none;
 	//         user-select: none;
 	// 		.px-ui-tr{
-	//             background-color:#f9f9f9;
+	//             background-color: #f9f9f9;
 	//         }
 	//         .px-ui-td{
-	//             height:40px;
-	//             line-height:40px;
-	//             border:1px solid #fff;
-	//             text-align:center;
+	//             height: 40px;
+	//             line-height: 40px;
+	//             border: 1px solid #fff;
+	//             text-align: center;
 	//         }
 	//         .px-ui-tr-selected{
 	//             background-color: green;
+	//         }
+	//         .select {
+	//             color: red;
+	//         }
+	//         .delete-btn {
+	//             color: dodgerblue;
 	//         }
 	// 	}
 	// </style>
 	//
 	// <template>
-	// 	<table class="px-ui-table">
-	//         <caption></caption>
-	//         <tbody>
-	//             <tr class="px-ui-tr" v-for="d in gridData" v-bind:class="{'px-ui-tr-selected': select[$index].selected}"
-	//              @click="toggle(select[$index])">
-	//                 <td class="px-ui-td" v-text="d.name"></td><td class="px-ui-td" v-text="d.age"></td>
-	//                 <td class="delete-btn" v-on:click="removeItem(d, $event)">删除</td>
-	//             </tr>
-	//         </tbody>
-	//     </table>
+	//     <div class="px-table-component">
+	//         <div class="table-operate-area">
+	//             <input type="text" class="search-input"/>
+	//             <div class="add-btn" @click="addItem()">添加</div>
+	//         </div>
+	//         <table class="px-ui-table">
+	//             <caption></caption>
+	//             <tbody>
+	//                 <tr class="px-ui-tr" v-for="d in gridData"
+	//                 v-bind:class="{'px-ui-tr-selected': select[$index].selected, 'select': d.isSelected}"
+	//                  @click="selectItem(d)">
+	//                     <td class="px-ui-td" v-text="d.name"></td><td class="px-ui-td" v-text="d.age"></td>
+	//                     <td class="px-ui-td delete-btn" v-on:click="removeItem(d, $event)">删除</td>
+	//                 </tr>
+	//             </tbody>
+	//         </table>
+	//     </div>
 	// </template>
 	//
 	// <script>
-	var merge = __webpack_require__(7);
+	var merge = __webpack_require__(/*! ../util/mergeObject */ 7);
 	module.exports = {
 	    props: {
 	        tableData: Array
 	    },
-	    data: function () {
+	    data: function data() {
 	        //gridData is for this component modify parent's data
-	        var gridData = this.tableData.concat(),
-	            vm = this,
-	            i,
-	            o,
-	            selectArr = [];
-	        for (i = 0; i < gridData.length; i += 1) {
-	            o = {};
-	            if (i % 2 === 0) {
-	                o.selected = false;
-	            } else {
-	                o.selected = true;
-	            }
-	            selectArr.push(o);
-	        }
+	        var gridData = this.tableData.concat();
+	        gridData = gridData.map(function (item, index) {
+	            item.isSelected = false;
+	            return item;
+	        });
 	        return {
-	            gridData: gridData,
-	            select: selectArr
+	            gridData: gridData
 	        };
 	    },
+	    computed: {
+	        select: function select() {
+	            var i,
+	                o,
+	                selectArr = [];
+	
+	            for (i = 0; i < this.gridData.length; i += 1) {
+	                o = {};
+	                if (i % 2 === 0) {
+	                    o.selected = false;
+	                } else {
+	                    o.selected = true;
+	                }
+	                selectArr.push(o);
+	            }
+	            return selectArr;
+	        }
+	    },
 	    methods: {
-	        removeItem: function (item) {
+	        removeItem: function removeItem(item) {
 	            this.gridData.$remove(item);
+	            console.log(this.select);
 	        },
-	        toggle: function (d) {
-	            d.selected = !d.selected;
+	        selectItem: function selectItem(item) {
+	            //向父组件提供接口
+	            this.$dispatch('get-selected-data', item);
+	            item.isSelected = true;
+	            console.log(this.tableData);
+	        },
+	        addItem: function addItem() {
+	            this.gridData.push({
+	                name: 'qc',
+	                age: 25
+	            });
 	        }
 	    }
 	};
@@ -506,12 +590,15 @@
 
 /***/ },
 /* 7 */
+/*!*********************************************!*\
+  !*** ../vueProject/src/util/mergeObject.js ***!
+  \*********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
 	 * Created by qingcheng on 16/10/12.
 	 */
-	var typeDetect = __webpack_require__(8);
+	var typeDetect = __webpack_require__(/*! ./typeDetect */ 8);
 	
 	function merge(to, from) {
 	    "use strict";
@@ -544,6 +631,9 @@
 
 /***/ },
 /* 8 */
+/*!********************************************!*\
+  !*** ../vueProject/src/util/typeDetect.js ***!
+  \********************************************/
 /***/ function(module, exports) {
 
 	/**
@@ -574,9 +664,12 @@
 
 /***/ },
 /* 9 */
+/*!************************************************************************************************************************************!*\
+  !*** ./~/.1.2.3@vue-html-loader!./~/.8.5.4@vue-loader/lib/selector.js?type=template&index=0!../vueProject/src/components/grid.vue ***!
+  \************************************************************************************************************************************/
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t<table class=\"px-ui-table\">\n        <caption></caption>\n        <tbody>\n            <tr class=\"px-ui-tr\" v-for=\"d in gridData\" v-bind:class=\"{'px-ui-tr-selected': select[$index].selected}\"\n             @click=\"toggle(select[$index])\">\n                <td class=\"px-ui-td\" v-text=\"d.name\"></td><td class=\"px-ui-td\" v-text=\"d.age\"></td>\n                <td class=\"delete-btn\" v-on:click=\"removeItem(d, $event)\">删除</td>\n            </tr>\n        </tbody>\n    </table>\n";
+	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<div class=\"px-table-component\">\n    <div class=\"table-operate-area\">\n        <input type=\"text\" class=\"search-input\"/>\n        <div class=\"add-btn\" @click=\"addItem()\">添加</div>\n    </div>\n    <table class=\"px-ui-table\">\n        <caption></caption>\n        <tbody>\n            <tr class=\"px-ui-tr\" v-for=\"d in gridData\"\n            v-bind:class=\"{'px-ui-tr-selected': select[$index].selected, 'select': d.isSelected}\"\n             @click=\"selectItem(d)\">\n                <td class=\"px-ui-td\" v-text=\"d.name\"></td><td class=\"px-ui-td\" v-text=\"d.age\"></td>\n                <td class=\"px-ui-td delete-btn\" v-on:click=\"removeItem(d, $event)\">删除</td>\n            </tr>\n        </tbody>\n    </table>\n</div>\n";
 
 /***/ }
 /******/ ]);

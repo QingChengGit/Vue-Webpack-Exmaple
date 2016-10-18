@@ -20,5 +20,12 @@ demo = new Vue({
     },
     components: {
         'grid-component': gridComponent
+    },
+    methods: {
+        getSelectedData: function(data) {
+            "use strict";
+            console.log('获取grid子组件选中的数据:');
+            console.log('name:' + data.name + ',age:' + data.age);
+        }
     }
 });

@@ -7,7 +7,7 @@
 <body>
     <div class="container">
         <!-- :table-data 动态绑定dataArr数据给子组件,当dataArr发生变化时子组件会相应响应 -->
-        <grid-component :table-data="dataArr"></grid-component>
+        <grid-component :table-data="dataArr" @get-selected-data="getSelectedData"></grid-component>
     </div>
     <script src="src/libs/vue.min.js"></script>
     <script src="dist/bundle.js"></script>
