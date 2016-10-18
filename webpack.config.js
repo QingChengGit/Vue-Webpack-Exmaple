@@ -28,6 +28,5 @@ module.exports = {
             }
         ]
     },
-
     devtool:'source-map'//设置此属性，使用webpack打包时会自动生成输出文件对应的resource map文件
 };

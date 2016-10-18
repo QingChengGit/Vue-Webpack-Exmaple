@@ -18,7 +18,7 @@
             text-align:center;
         }
         .px-ui-tr-selected{
-            border:1px solid green;
+            background-color: green;
         }
 	}
 </style>
@@ -27,31 +27,48 @@
 	<table class="px-ui-table">
         <caption></caption>
         <tbody>
-            <tr class="px-ui-tr" v-for="d in tableData" @click="toggle">
+            <tr class="px-ui-tr" v-for="d in gridData" v-bind:class="{'px-ui-tr-selected': select[$index].selected}"
+             @click="toggle(select[$index])">
                 <td class="px-ui-td" v-text="d.name"></td><td class="px-ui-td" v-text="d.age"></td>
-                <td class="delete-btn" v-on:click="removeItem(d, $event)"></td>
+                <td class="delete-btn" v-on:click="removeItem(d, $event)">删除</td>
             </tr>
         </tbody>
     </table>
 </template>
 
 <script>
+var merge = require('../util/mergeObject');
 module.exports = {
     props: {
         tableData: Array
     },
-    created: function() {
-        console.log(this.tableData);
+    data: function() {
+        //gridData is for this component modify parent's data
+        var gridData = this.tableData.concat(),
+            vm = this,
+            i,
+            o,
+            selectArr = [];
+        for(i = 0;i < gridData.length;i += 1){
+            o = {};
+            if(i % 2 === 0){
+                o.selected = false;
+            }else{
+                o.selected = true;
+            }
+            selectArr.push(o);
+        }
+        return {
+            gridData: gridData,
+            select: selectArr
+        };
     },
     methods:{
-        removeItem:function(item){
-            console.log(this.tableData);
-            console.log('======');
-            console.log(item);
-            this.tableData.$remove(item);
+        removeItem: function(item){
+            this.gridData.$remove(item);
         },
-        toggle:function(){
-
+        toggle: function(d){
+            d.selected = !d.selected;
         }
     }
 }

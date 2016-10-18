@@ -8,7 +8,7 @@ function merge(to, from) {
     var p,
         toVal,
         fromVal;
-    if(!typeDetect.isLikeObject(to) || !typeDetect.isLikeObject(form)){
+    if(!typeDetect.isLikeObject(to) || !typeDetect.isLikeObject(from)){
         throw new Error('parameters must be object or function!');
     }
     for(p in from){
@@ -21,8 +21,13 @@ function merge(to, from) {
                 if(typeDetect.isLikeObject(toVal) && typeDetect.isLikeObject(fromVal)){
                     //if toVal and fromVal are object/function then merge them
                     merge(toVal, fromVal);
+                }else{
+                    to[p] = fromVal;
                 }
             }
         }
     }
+    return to;
 }
+
+module.exports = merge;

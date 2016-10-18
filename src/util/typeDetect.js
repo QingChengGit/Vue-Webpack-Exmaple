@@ -1,14 +1,14 @@
 /**
  * Created by qingcheng on 16/10/12.
  */
-var toString = Object.prototype.toString.call,
+var _toString = Object.prototype.toString,
     that = {},
     features = ['Array', 'Object', 'Function', 'String', 'Number', 'Boolean', 'Null', 'Undefined'];
 
 features.reduce(function(prev, cur, index, arr) {
     "use strict";
     prev['is' + cur] = function(o) {
-        return toString(o) === '[object ' + cur + ']';
+        return _toString.call(o) === '[object ' + cur + ']';
     };
     return prev;
 }, that);
