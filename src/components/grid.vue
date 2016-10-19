@@ -62,8 +62,8 @@
             <caption></caption>
             <tbody>
                 <tr class="px-ui-tr" v-for="d in gridData"
-                v-bind:class="{'px-ui-tr-selected': select[$index].selected, 'select': d.isSelected}"
-                 @click="selectItem(d)">
+                v-bind:class="{'px-ui-tr-selected': select[$index].selected}"
+                v-toggle-select @click="selectItem(d)">
                     <td class="px-ui-td" v-text="d.name"></td><td class="px-ui-td" v-text="d.age"></td>
                     <td class="px-ui-td delete-btn" v-on:click="removeItem(d, $event)">删除</td>
                 </tr>
@@ -74,6 +74,20 @@
 
 <script>
 var merge = require('../util/mergeObject');
+
+function toggleSelect(evt) {
+    var target = evt.currentTarget,
+        className = target.className,
+        reg = /(^|\s*)select(\s+|$)/;
+
+        if(!reg.test(className)){
+            className += ' select';
+        }else{
+            className = className.replace(reg, '');
+        }
+    target.className = className;
+}
+
 module.exports = {
     props: {
         tableData: Array
@@ -81,17 +95,13 @@ module.exports = {
     data: function() {
         //gridData is for this component modify parent's data
         var gridData = this.tableData.concat();
-        gridData = gridData.map(function(item, index) {
-            item.isSelected = false;
-            return item;
-        });
         return {
             gridData: gridData
         };
     },
     computed: {
         select: function() {
-            //给表格相邻的行添加不同的样式
+            //给表格相邻的行添加不同的样式,当gridData更新时会自动触发此函数
             var i,
                 o,
                 selectArr = [];
@@ -115,14 +125,24 @@ module.exports = {
         selectItem: function(item){
             //向父组件提供接口
             this.$dispatch('get-selected-data', item);
-            item.isSelected = true;
-            console.log(this.tableData);
         },
         addItem: function() {
             this.gridData.push({
                 name: 'qc',
                 age: 25
             });
+        },
+
+    },
+    directives: {
+        //自定义指定directive
+        'toggle-select': {
+            bind: function() {
+                this.el.addEventListener('click', toggleSelect, false);
+            },
+            unbind: function() {
+                this.el.removeEventListener('click', toggleSelect, false);
+            }
         }
     }
 }
