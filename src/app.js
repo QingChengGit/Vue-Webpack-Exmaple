@@ -38,17 +38,19 @@ var Vue = require('vue').default,
 
 navVue = new Vue({
     el: '.container',
-    data: {
-        navList: [
-            {id: '001', name: '派券中心', uri: '/tickets', target: '_blank'},
-            {id: '002', name: '外卖管理', uri: '/takePackage'},
-            {id: '003', name: '微信商城', uri: './wxMall', target: '_self'},
-            {id: '004', name: '新客营销', uri: './newMarketing', target: '_self'}
-        ],
-        isVertical: true
-    },
+    //https://vuejs.org/v2/guide/render-function.html
     render: function(handler){
-        return handler(navBar);
+        return handler(navBar, {
+            props: {
+                navList: [
+                    {id: '001', name: '派券中心', uri: '/tickets', target: '_blank'},
+                    {id: '002', name: '外卖管理', uri: '/takePackage'},
+                    {id: '003', name: '微信商城', uri: './wxMall', target: '_self'},
+                    {id: '004', name: '新客营销', uri: './newMarketing', target: '_self'}
+                ],
+                isVertical: false
+            }
+        });
     }
 });
 

@@ -12,12 +12,12 @@
 
 <style lang="less">
     .navbar-ul {
-        width: 180px;
         font-size: 0;
         .navbar-li {
+            width: 180px;
+            display: inline-block;
             border-bottom: 1px solid #a7b1c2;
-            color: #fff;
-            background-color: #293846;
+            vertical-align: middle;
         }
         .navbar-item-a {
             position: relative;
@@ -25,7 +25,13 @@
             height: 45px;
             line-height: 45px;
             padding: 0 10px;
+            color: #fff;
+            background-color: #33b5d4;
+            text-decoration: none;
             cursor: pointer;
+        }
+        .navbar-item-active {
+
         }
         .nav-item-text-span {
             margin-left: 6px;
@@ -44,8 +50,7 @@
             transform: translate(0, -50%);
         }
         .vertical {
-            display: inline-block;
-            vertical-align: middle;
+            display: block;
         }
     }
 </style>
