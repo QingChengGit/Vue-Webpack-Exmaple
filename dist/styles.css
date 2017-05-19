@@ -1,0 +1,68 @@
+
+.simple-table-component .yunnex-table {
+  table-layout: fixed;
+  border: 0;
+  border-collapse: collapse;
+}
+.simple-table-component .yunnex-table-thead {
+  line-height: 18px;
+  padding: 11px 12px;
+  font-size: 14px;
+  color: #333;
+  background: #f2f2f2;
+}
+.simple-table-component .yunnex-table-tr {
+  border-bottom: 1px solid #e7eaec;
+  background-color: #fff;
+}
+.simple-table-component td {
+  padding: 8px;
+  font-size: 13px;
+  color: #676a6c;
+}
+
+.yunnex-pagination {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.yunnex-pagination .pagination-item {
+  display: inline-block;
+  margin: 0 4px;
+  padding: 4px 9px;
+  border: 1px solid #DDDDDD;
+  border-radius: 6px;
+  color: #333;
+  background-color: #FFFFFF;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.yunnex-pagination .pagination-item:hover {
+  color: #fff;
+  background: #1eb596;
+}
+.yunnex-pagination .pagination-item:first-child {
+  margin-left: 0;
+}
+.yunnex-pagination .pagination-item:last-child {
+  margin-right: 0;
+}
+.yunnex-pagination .pagination-desc {
+  border: 0;
+  cursor: none;
+}
+.yunnex-pagination .pagination-desc:hover {
+  color: #333;
+  background-color: #FFFFFF;
+}
+.yunnex-pagination .page-static {
+  vertical-align: middle;
+}
+.yunnex-pagination .page-jump {
+  margin-left: 10px;
+}
+.yunnex-pagination .jump-page-btn {
+  display: inline-block;
+  width: 40px;
+}

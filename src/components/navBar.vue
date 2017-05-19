@@ -16,7 +16,7 @@
         .navbar-li {
             width: 180px;
             display: inline-block;
-            border-bottom: 1px solid #a7b1c2;
+            border-right: 1px solid #a7b1c2;
             vertical-align: middle;
         }
         .navbar-item-a {
@@ -30,8 +30,9 @@
             text-decoration: none;
             cursor: pointer;
         }
-        .navbar-item-active {
-
+        .navbar-item-active, .navbar-item-a:hover {
+            color: #33b5d4;
+            background-color: #fff;
         }
         .nav-item-text-span {
             margin-left: 6px;
@@ -51,6 +52,8 @@
         }
         .vertical {
             display: block;
+            border-right: none;
+            border-bottom: 1px solid #a7b1c2;
         }
     }
 </style>
@@ -60,7 +63,10 @@
         data: function() {
             //防止组件修改父组件数据
             return {
-                list: this.navList ? this.navList.concat([]) : []
+                list: this.navList ? this.navList.concat([]) : [],
+                selectedItem: function() {
+                    return this.getSelectedItem();
+                }
             };
         },
         props: {
@@ -71,6 +77,23 @@
             isVertical: {
                 type: Boolean,
                 default: true
+            }
+        },
+        methods: {
+            setSelectedItem: function(id) {
+                this.list.some(function(item, index, arr) {
+                    if(item.id === id.toString()){
+                        item.active = true;
+                        return true;
+                    }
+                });
+            },
+            getSelectedItem: function() {
+                this.list.some(function(item, index, arr) {
+                    if(item.active){
+                        return item;
+                    }
+                });
             }
         }
     };

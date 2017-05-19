@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>节日营销</title>
+    <link rel="stylesheet" href="js/plugins/popup/css/popup.css" />
+    <link rel="stylesheet" href="css/statics/common-newui.css" />
+    <link rel="stylesheet" href="dist/styles.css" />
+</head>
+<body>
+<div class="page-festival-marketing" id="app">
+    <div class="title">节日营销</div>
+    <div class="marketing-content">
+        <div class="query-condition-area">
+            <div class="query-condition-item">
+                <span class="query-name">活动名称</span>
+                <input type="text" class="yunnex-input" v-model="activityName"/>
+            </div>
+            <div class="query-condition-item">
+                <span class="query-name">活动类型</span>
+                <select class="yunnex-input" v-model="activityType">
+                    <option v-for="type in activityTypes"></option>
+                </select>
+            </div>
+            <div class="query-condition-item">
+                <span class="query-name">活动状态</span>
+                <select class="yunnex-input" v-model="activityStatus">
+                    <option v-for="type in activityStatuses"></option>
+                </select>
+            </div>
+            <div class="yunnex-btn green-btn" @click="queryData">查询</div>
+        </div>
+        <div class="yunnex-btn green-btn create-activity-btn">新建活动</div>
+        <yunnex-table></yunnex-table>
+    </div>
+</div>
+<script type="text/javascript" src="dist/app.js"></script>
+</body>
+</html>

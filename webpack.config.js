@@ -3,7 +3,8 @@
  */
 var path = require('path'),
     dir = path.resolve('../Vue-Webpack-Exmaple'),
-    nodeModulesDir = path.resolve('node_modules');
+    nodeModulesDir = path.resolve('node_modules'),
+    ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     context: dir,
@@ -19,7 +20,10 @@ module.exports = {
             {
                 test: /\.vue$/,
                 exclude: nodeModulesDir,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+                options: {
+                    extractCSS: true
+                }
             }
         ]
     },
@@ -29,5 +33,8 @@ module.exports = {
     },
     resolveLoader: {
         modules: [nodeModulesDir]
-    }
+    },
+    plugins: [
+        new ExtractTextPlugin("styles.css")
+    ]
 };
