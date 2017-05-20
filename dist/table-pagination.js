@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 39);
+/******/ 	return __webpack_require__(__webpack_require__.s = 41);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -7834,19 +7834,20 @@ setTimeout(function () {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(3), __webpack_require__(18)))
 
 /***/ }),
-/* 6 */
+/* 6 */,
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(21)
+  __webpack_require__(19)
 }
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(12),
+  __webpack_require__(14),
   /* template */
-  __webpack_require__(17),
+  __webpack_require__(15),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -7854,9 +7855,9 @@ var Component = __webpack_require__(0)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/qingcheng/Documents/qingcheng/code/repository/Vue-Webpack-Exmaple/src/components/navBar.vue"
+Component.options.__file = "/Users/qingcheng/Documents/qingcheng/code/repository/Vue-Webpack-Exmaple/src/components/yunnex-table.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] navBar.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] yunnex-table.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -7865,9 +7866,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-8cef1c28", Component.options)
+    hotAPI.createRecord("data-v-0234d1e8", Component.options)
   } else {
-    hotAPI.reload("data-v-8cef1c28", Component.options)
+    hotAPI.reload("data-v-0234d1e8", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -7878,10 +7879,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -7889,16 +7887,92 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.navbar-ul {\n  font-size: 0;\n}\n.navbar-ul .navbar-li {\n  width: 180px;\n  display: inline-block;\n  border-right: 1px solid #a7b1c2;\n  vertical-align: middle;\n}\n.navbar-ul .navbar-item-a {\n  position: relative;\n  display: block;\n  height: 45px;\n  line-height: 45px;\n  padding: 0 10px;\n  color: #fff;\n  background-color: #33b5d4;\n  text-decoration: none;\n  cursor: pointer;\n}\n.navbar-ul .navbar-item-active,\n.navbar-ul .navbar-item-a:hover {\n  color: #33b5d4;\n  background-color: #fff;\n}\n.navbar-ul .nav-item-text-span {\n  margin-left: 6px;\n  line-height: 1;\n  font-size: 14px;\n  vertical-align: middle;\n}\n.navbar-ul .arrow {\n  position: absolute;\n  top: 50%;\n  right: 10px;\n  -webkit-transform: translate(0, -50%);\n  -moz-transform: translate(0, -50%);\n  -ms-transform: translate(0, -50%);\n  -o-transform: translate(0, -50%);\n  transform: translate(0, -50%);\n}\n.navbar-ul .vertical {\n  display: block;\n  border-right: none;\n  border-bottom: 1px solid #a7b1c2;\n}\n", ""]);
+exports.push([module.i, "\n.simple-table-component .yunnex-table {\n  table-layout: fixed;\n  border: 0;\n  border-collapse: collapse;\n}\n.simple-table-component .yunnex-table-thead {\n  line-height: 18px;\n  padding: 11px 12px;\n  font-size: 14px;\n  color: #333;\n  background: #f2f2f2;\n}\n.simple-table-component .yunnex-table-tr {\n  border-bottom: 1px solid #e7eaec;\n  background-color: #fff;\n}\n.simple-table-component td {\n  padding: 8px;\n  font-size: 13px;\n  color: #676a6c;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 11 */,
-/* 12 */
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.yunnex-pagination {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.yunnex-pagination .pagination-item {\n  display: inline-block;\n  margin: 0 4px;\n  padding: 4px 9px;\n  border: 1px solid #DDDDDD;\n  border-radius: 6px;\n  color: #333;\n  background-color: #FFFFFF;\n  vertical-align: middle;\n  cursor: pointer;\n}\n.yunnex-pagination .pagination-item:hover {\n  color: #fff;\n  background: #1eb596;\n}\n.yunnex-pagination .pagination-item:first-child {\n  margin-left: 0;\n}\n.yunnex-pagination .pagination-item:last-child {\n  margin-right: 0;\n}\n.yunnex-pagination .page-selected {\n  color: #fff;\n  background: #1eb596;\n}\n.yunnex-pagination .pagination-desc {\n  border: 0;\n  cursor: none;\n}\n.yunnex-pagination .pagination-desc:hover {\n  color: #333;\n  background-color: #FFFFFF;\n}\n.yunnex-pagination .page-static {\n  vertical-align: middle;\n}\n.yunnex-pagination .page-jump {\n  margin-left: 10px;\n}\n.yunnex-pagination .jump-page-btn {\n  display: inline-block;\n  width: 40px;\n  cursor: pointer;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 10 */,
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(20)
+}
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(13),
+  /* template */
+  __webpack_require__(16),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/qingcheng/Documents/qingcheng/code/repository/Vue-Webpack-Exmaple/src/components/pagination.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] pagination.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3778ce96", Component.options)
+  } else {
+    hotAPI.reload("data-v-3778ce96", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 12 */,
+/* 13 */
 /***/ (function(module, exports) {
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -7962,86 +8036,293 @@ exports.push([module.i, "\n.navbar-ul {\n  font-size: 0;\n}\n.navbar-ul .navbar-
 
 module.exports = {
     data: function() {
-        //防止组件修改父组件数据
         return {
-            list: this.navList ? this.navList.concat([]) : [],
-            selectedItem: function() {
-                return this.getSelectedItem();
-            }
+            inputPage: '',
+            page: this.currentPage
         };
     },
     props: {
-        navList:{
-            type: Array,
+        pageSize: {
+            type: Number,
             required: true
         },
-        isVertical: {
-            type: Boolean,
-            default: true
+        currentPage: {
+            type: Number,
+            default: 1
+        },
+        dataCount: {
+            type: Number
         }
     },
     methods: {
-        setSelectedItem: function(id) {
-            this.list.some(function(item, index, arr) {
-                if(item.id === id.toString()){
-                    item.active = true;
-                    return true;
+        clickPageItem: function(evt) {
+            var target = evt.target,
+                currentPage;
+            if(target.hasAttribute('page')){
+                currentPage = target.getAttribute('page');
+                if(isNaN(currentPage)){
+                    switch (currentPage){
+                        case 'first':
+                            currentPage = 1;
+                            break;
+                        case 'prev':
+                            currentPage = this.page - 1;
+                            break;
+                        case 'next':
+                            currentPage = this.page + 1;
+                            break;
+                        case 'last':
+                            currentPage = this.pageSize;
+                            break;
+                    }
                 }
-            });
+                this.page = parseInt(currentPage, 10);
+                this.$emit('jump-to-page', this.page);
+                console.log(this.page);
+            }
         },
-        getSelectedItem: function() {
-            this.list.some(function(item, index, arr) {
-                if(item.active){
-                    return item;
-                }
-            });
+        jumpPage: function() {
+            if(!isNaN(this.inputPage) && (this.inputPage >= 1 && this.inputPage <= this.pageSize)){
+                this.page = this.inputPage;
+                this.$emit('jump-to-page', this.page);
+            }else if(/\.+/.test(this.inputPage)){
+                alert('输入的页码不能为非整数!');
+            }else{
+                alert('请输入1-' + this.pageSize + '之间的整数页码!');
+            }
         }
     }
 };
 
 
 /***/ }),
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var pagination = __webpack_require__(11);
+
+module.exports = {
+    data: function() {
+        return {};
+    },
+    props: {
+        titles: {
+            type: Object,
+            required: true
+        },
+        datas: {
+            type: Array,
+            required: true
+        },
+        isShowPagination: {
+            type: Boolean,
+            default: false
+        },
+        pageSize: {
+            type: Number,
+            required: this.isShowPagination
+        },
+        currentPage: {
+            type: Number,
+            default: 1
+        },
+        dataCount: {
+            type: Number
+        },
+        jumpToPage: {
+            type: Function,
+            required: this.isShowPagination
+        }
+    },
+    components: {
+        //在当前组件注册pagination组件
+        pagination: pagination
+    },
+    created: function() {
+    }
+}
+
+
+/***/ }),
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('ul', {
-    staticClass: "navbar-ul"
-  }, _vm._l((_vm.list), function(item) {
-    return _c('li', {
-      class: {
-        'navbar-li': true, 'vertical': _vm.isVertical
-      }
-    }, [_c('a', {
-      class: {
-        'navbar-item-active': item.isActive, 'navbar-item-a': true
-      },
-      attrs: {
-        "href": item.uri,
-        "target": item.target || ''
-      }
-    }, [_c('i', {
-      class: item.iconClass
-    }), _vm._v(" "), _c('span', {
-      staticClass: "nav-item-text-span"
-    }, [_vm._v(_vm._s(item.name))]), _vm._v(" "), _c('i', {
-      staticClass: "icon-arrow-down arrow"
-    })])])
-  }))
+  return _c('div', {
+    staticClass: "simple-table-component"
+  }, [_c('table', {
+    staticClass: "yunnex-table"
+  }, [_c('thead', {
+    staticClass: "yunnex-table-thead"
+  }, [_c('tr', _vm._l((_vm.titles), function(title) {
+    return _c('th', [_vm._v("\n                " + _vm._s(title) + "\n            ")])
+  }))]), _vm._v(" "), _c('tbody', _vm._l((_vm.datas), function(item) {
+    return _c('tr', {
+      staticClass: "yunnex-table-tr"
+    }, _vm._l((_vm.titles), function(val, key) {
+      return _c('td', [_vm._v("\n                " + _vm._s(item[key]) + "\n            ")])
+    }))
+  }))]), _vm._v(" "), (_vm.isShowPagination) ? _c('pagination', {
+    attrs: {
+      "page-size": _vm.pageSize,
+      "current-page": _vm.currentPage,
+      "data-count": _vm.dataCount
+    },
+    on: {
+      "jump-to-page": _vm.jumpToPage
+    }
+  }) : _vm._e()], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-8cef1c28", module.exports)
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-0234d1e8", module.exports)
   }
 }
 
 /***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('ul', {
+    staticClass: "yunnex-pagination",
+    on: {
+      "click": _vm.clickPageItem
+    }
+  }, [_c('li', {
+    class: {
+      'pagination-item': true, 'disabled': _vm.page === 1
+    },
+    attrs: {
+      "page": _vm.page > 1 ? 'first' : false
+    }
+  }, [_vm._v("首页")]), _vm._v(" "), _c('li', {
+    class: {
+      'pagination-item': true, 'disabled': _vm.page === 1
+    },
+    attrs: {
+      "page": _vm.page > 1 ? 'prev' : false
+    }
+  }, [_vm._v("上一页")]), _vm._v(" "), _vm._l((_vm.pageSize), function(n) {
+    return _c('li', {
+      class: {
+        'pagination-item': true, 'page-selected': _vm.page === n
+      },
+      attrs: {
+        "page": n
+      }
+    }, [_vm._v("\n        " + _vm._s(n) + "\n    ")])
+  }), _vm._v(" "), _c('li', {
+    class: {
+      'pagination-item': true, 'disabled': _vm.page == _vm.pageSize
+    },
+    attrs: {
+      "page": _vm.page < _vm.pageSize ? 'next' : false
+    }
+  }, [_vm._v("下一页")]), _vm._v(" "), _c('li', {
+    class: {
+      'pagination-item': true, 'disabled': _vm.page == _vm.pageSize
+    },
+    attrs: {
+      "page": _vm.page < _vm.pageSize ? 'last' : false
+    }
+  }, [_vm._v("尾页")]), _vm._v(" "), _c('li', {
+    staticClass: "pagination-item pagination-desc"
+  }, [_c('span', {
+    staticClass: "page-static"
+  }, [_vm._v("\n            共" + _vm._s(_vm.pageSize) + "页\n        ")]), _vm._v(" "), (typeof _vm.dataCount !== 'undefined') ? _c('span', {
+    staticClass: "page-static"
+  }, [_vm._v("\n            ," + _vm._s(_vm.dataCount) + "条记录\n        ")]) : _vm._e(), _vm._v(" "), _c('span', {
+    staticClass: "page-static page-jump"
+  }, [_vm._v("\n            到"), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.inputPage),
+      expression: "inputPage"
+    }],
+    staticClass: "yunnex-input",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.inputPage)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.inputPage = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "yunnex-btn jump-page-btn",
+    on: {
+      "click": _vm.jumpPage
+    }
+  }, [_vm._v("确定")])])])], 2)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-3778ce96", module.exports)
+  }
+}
+
+/***/ }),
+/* 17 */,
 /* 18 */
 /***/ (function(module, exports) {
 
@@ -8069,25 +8350,23 @@ module.exports = g;
 
 
 /***/ }),
-/* 19 */,
-/* 20 */,
-/* 21 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(10);
+var content = __webpack_require__(8);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("650ab591", content, false);
+var update = __webpack_require__(2)("519203f0", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../build/node_modules/.0.28.1@css-loader/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-8cef1c28\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../build/node_modules/.4.0.3@less-loader/dist/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./navBar.vue", function() {
-     var newContent = require("!!../../../../build/node_modules/.0.28.1@css-loader/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-8cef1c28\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../build/node_modules/.4.0.3@less-loader/dist/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./navBar.vue");
+   module.hot.accept("!!../../../../build/node_modules/.0.28.1@css-loader/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0234d1e8\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../build/node_modules/.4.0.3@less-loader/dist/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./yunnex-table.vue", function() {
+     var newContent = require("!!../../../../build/node_modules/.0.28.1@css-loader/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0234d1e8\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../build/node_modules/.4.0.3@less-loader/dist/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./yunnex-table.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -8097,430 +8376,123 @@ if(false) {
 }
 
 /***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(9);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("11601e47", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../build/node_modules/.0.28.1@css-loader/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3778ce96\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../build/node_modules/.4.0.3@less-loader/dist/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./pagination.vue", function() {
+     var newContent = require("!!../../../../build/node_modules/.0.28.1@css-loader/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3778ce96\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../build/node_modules/.4.0.3@less-loader/dist/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./pagination.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 21 */,
 /* 22 */,
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(37)
-}
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(30),
-  /* template */
-  __webpack_require__(33),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/qingcheng/Documents/qingcheng/code/repository/Vue-Webpack-Exmaple/src/components/customFilter.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] customFilter.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-23be08c5", Component.options)
-  } else {
-    hotAPI.reload("data-v-23be08c5", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(38)
-}
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(31),
-  /* template */
-  __webpack_require__(35),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/qingcheng/Documents/qingcheng/code/repository/Vue-Webpack-Exmaple/src/components/grid.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] grid.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3b7c4742", Component.options)
-  } else {
-    hotAPI.reload("data-v-3b7c4742", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
+/* 23 */,
+/* 24 */,
 /* 25 */,
 /* 26 */,
-/* 27 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.wrap .message-input {\n  width: 150px;\n  height: 30px;\n}\n.wrap .greet-message {\n  margin-top: 10px;\n  color: #fff;\n  background-color: green;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.px-ui-table {\n  width: 600px;\n  margin: 10px 0;\n  border-collapse: collapse;\n  border: 2px solid #33acfe;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.px-ui-table .px-ui-tr {\n  background-color: #f9f9f9;\n}\n.px-ui-table .px-ui-td {\n  height: 40px;\n  line-height: 40px;\n  border: 1px solid #fff;\n  text-align: center;\n}\n.px-ui-table .px-ui-tr-selected {\n  border: 1px solid green;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 27 */,
+/* 28 */,
 /* 29 */,
-/* 30 */
-/***/ (function(module, exports) {
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-module.exports = {
-    data: function() {
-        return {
-            message: ''
-        };
-    },
-    computed: {
-        greeting: function() {
-            return 'welcome, you typed ' + this.message;
-        }
-    },
-    filters: {
-        formatStr: function(val) {
-            return val + '--' + (new Date()).getTime();
-        }
-    }
-};
-
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports) {
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-module.exports = {
-    props: {
-        tableData: Array
-    },
-    created: function() {
-        console.log(this.tableData);
-    },
-    methods:{
-        removeItem:function(item){
-            console.log(this.tableData);
-            console.log('======');
-            console.log(item);
-            this.tableData.$remove(item);
-        },
-        toggle:function(){
-
-        }
-    }
-}
-
-
-/***/ }),
+/* 30 */,
+/* 31 */,
 /* 32 */,
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "wrap"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.message),
-      expression: "message"
-    }],
-    staticClass: "message-input",
-    attrs: {
-      "type": "text",
-      "placeholder": "type some thing"
-    },
-    domProps: {
-      "value": (_vm.message)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.message = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _c('div', {
-    staticClass: "greet-message"
-  }, [_vm._v(_vm._s(_vm._f("formatStr")(_vm.greeting)))])])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-23be08c5", module.exports)
-  }
-}
-
-/***/ }),
+/* 33 */,
 /* 34 */,
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('table', {
-    staticClass: "px-ui-table"
-  }, [_c('caption'), _vm._v(" "), _c('tbody', _vm._l((_vm.tableData), function(d) {
-    return _c('tr', {
-      staticClass: "px-ui-tr",
-      on: {
-        "click": _vm.toggle
-      }
-    }, [_c('td', {
-      staticClass: "px-ui-td",
-      domProps: {
-        "textContent": _vm._s(d.name)
-      }
-    }), _c('td', {
-      staticClass: "px-ui-td",
-      domProps: {
-        "textContent": _vm._s(d.age)
-      }
-    }), _vm._v(" "), _c('td', {
-      staticClass: "delete-btn",
-      on: {
-        "click": function($event) {
-          _vm.removeItem(d, $event)
-        }
-      }
-    }, [_vm._v("删除")])])
-  }))])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-3b7c4742", module.exports)
-  }
-}
-
-/***/ }),
+/* 35 */,
 /* 36 */,
-/* 37 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(27);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("0baeb0f2", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../build/node_modules/.0.28.1@css-loader/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-23be08c5\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../build/node_modules/.4.0.3@less-loader/dist/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./customFilter.vue", function() {
-     var newContent = require("!!../../../../build/node_modules/.0.28.1@css-loader/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-23be08c5\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../build/node_modules/.4.0.3@less-loader/dist/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./customFilter.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(28);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("09eb019a", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../build/node_modules/.0.28.1@css-loader/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3b7c4742\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../build/node_modules/.4.0.3@less-loader/dist/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./grid.vue", function() {
-     var newContent = require("!!../../../../build/node_modules/.0.28.1@css-loader/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3b7c4742\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../build/node_modules/.4.0.3@less-loader/dist/index.js!../../../../build/node_modules/.12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./grid.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 39 */
+/* 37 */,
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
- * Created by qingcheng on 17/05/16.
+ * Created by liuxinxin on 2017/5/18.
  */
 var Vue = __webpack_require__(5).default,
-    gridComponent = __webpack_require__(24),
-    customFilter = __webpack_require__(23),
-    navBar = __webpack_require__(6),
-    demo,
-    filterVue,
-    navVue;
+    yunnexTable = __webpack_require__(7),
+    app;
 
-/*demo = new Vue({
-    el: '.container',
+app = new Vue({
+    el: '#app',
     data: {
-        dataArr: [
-            {name: 'ws', age: 25},
-            {name: '小花', age: 16},
-            {name: '柳叶', age: 20}
+        activityName: '',
+        activityType: '0',
+        activityTypes: [
+            {text: '全部', value: '0'},
+            {text: '生日营销', value: '1'},
+            {text: '节日营销', value: '2'}
+        ],
+        activityStatus: '0',
+        activityStatuses: [
+            {text: '全部', value: '0'},
+            {text: '进行中', value: '1'},
+            {text: '启用', value: '2'},
+            {text: '暂停', value: '3'},
+            {text: '过期', value: '4'}
         ]
     },
-    components: {
-        'grid-component': gridComponent
-    }
-});*/
-/*filterVue = new Vue({
-    el: '.container',
-    render: h => h(customFilter)
-    /!*
-    // 上面的 => 箭头函数等价于
+    methods: {
+        queryData: function() {
+            var condition = {
+                activityName: this.activityName,
+                activityType: this.activityType,
+                activityStatus: this.activityStatus
+            };
+            console.log(condition);
+            /*ajax({
+             activityName: this.activityName,
+             activityType: this.activityType,
+             activityStatus: this.activityStatus
+             });*/
+        }
+    },
     render: function(h) {
-        return h(customFilter);
-    }
-    *!/
-    /!*components: {
-        'custom-filter': customFilter
-    }*!/
-});*/
-
-navVue = new Vue({
-    el: '.container',
-    //https://vuejs.org/v2/guide/render-function.html
-    render: function(handler){
-        return handler(navBar, {
+        return h(yunnexTable, {
             props: {
-                navList: [
-                    {id: '001', name: '派券中心', uri: '/tickets', target: '_blank'},
-                    {id: '002', name: '外卖管理', uri: '/takePackage'},
-                    {id: '003', name: '微信商城', uri: './wxMall', target: '_self'},
-                    {id: '004', name: '新客营销', uri: './newMarketing', target: '_self'}
+                titles: {
+                    name: '姓名',
+                    sex: '性别',
+                    age: '年龄',
+                    education: '学历',
+                    job: '职业'
+                },
+                datas: [
+                    {name: '张三', sex: '男', age: 22, education: '本科', job: '金融规划师'},
+                    {name: '王立光', sex: '男', age: 30, education: '本科', job: 'java工程师'},
+                    {name: '莫婷', sex: '女', age: 22, education: '研究生', job: '学生'},
+                    {name: '李娜', sex: '女', age: 26, education: '本科', job: 'UI设计师'},
+                    {name: '李伟', sex: '男', age: 30, education: '大专', job: '销售'}
                 ],
-                isVertical: false
+                isShowPagination: true,
+                pageSize: 8,
+                dataCount: 43,
+                jumpToPage: function(pageNum) {
+                    console.log('pageNum:' + pageNum);
+                }
             }
         });
     }
 });
-
-console.log(navVue);
 
 /***/ })
 /******/ ]);

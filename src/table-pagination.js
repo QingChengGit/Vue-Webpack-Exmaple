@@ -2,7 +2,7 @@
  * Created by liuxinxin on 2017/5/18.
  */
 var Vue = require('vue').default,
-    yunnexTable = require('../components/yunnex-table'),
+    yunnexTable = require('./components/yunnex-table'),
     app;
 
 app = new Vue({

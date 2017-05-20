@@ -17,7 +17,7 @@
             </tbody>
         </table>
         <pagination :page-size="pageSize" :current-page="currentPage" :data-count="dataCount"
-                    v-if="isShowPagination"></pagination>
+                      @jump-to-page="jumpToPage" v-if="isShowPagination"></pagination>
     </div>
 </template>
 
@@ -77,12 +77,17 @@
             },
             dataCount: {
                 type: Number
+            },
+            jumpToPage: {
+                type: Function,
+                required: this.isShowPagination
             }
         },
-        created: function() {
-        },
         components: {
+            //在当前组件注册pagination组件
             pagination: pagination
+        },
+        created: function() {
         }
     }
 </script>
