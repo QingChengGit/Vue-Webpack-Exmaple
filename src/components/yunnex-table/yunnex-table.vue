@@ -1,17 +1,28 @@
 <template>
-    <div class="simple-table-component">
+    <div class="yunnex-table-component">
         <table class="yunnex-table">
             <thead class="yunnex-table-thead">
             <tr>
-                <th v-for="title in titles">
-                    {{title}}
+                <th v-for="(title, i) in tableTitles" :style="{'width': title.width}">
+                    <div class="yunnex-th-wrap" v-if="typeof title.text === 'function'">
+                        <expand-cell :render="title.text" :index="i"></expand-cell>
+                    </div>
+                    <div class="yunnex-th-wrap" v-else>
+                        {{title.text}}
+                    </div>
                 </th>
             </tr>
             </thead>
             <tbody>
-            <tr class="yunnex-table-tr" v-for="item in datas">
-                <td v-for="(val, key) in titles">
-                    {{item[key]}}
+            <tr class="yunnex-table-tr" v-for="(item, index) in tableData">
+                <td v-for="(t, idx) in tableTitles">
+                    <div class="yunnex-cell-wrap" v-if="t.render">
+                        <expand-cell :render="t.render" :data="item[t.name]" :row-data="item"
+                        :index="index"></expand-cell>
+                    </div>
+                    <div class="yunnex-cell-wrap" v-else>
+                        {{item[t.name]}}
+                    </div>
                 </td>
             </tr>
             </tbody>
@@ -22,18 +33,19 @@
 </template>
 
 <style lang="less">
-    .simple-table-component {
+    .yunnex-table-component {
         .yunnex-table {
             table-layout: fixed;
             border: 0;
             border-collapse: collapse;
         }
         .yunnex-table-thead {
-            line-height: 18px;
-            padding: 11px 12px;
-            font-size: 14px;
             color: #333;
             background: #f2f2f2;
+            th {
+                padding: 8px;
+                font-size: 14px;
+            }
         }
         .yunnex-table-tr {
             border-bottom: 1px solid #e7eaec;
@@ -41,28 +53,29 @@
         }
         td {
             padding: 8px;
-            font-size: 13px;
+            font-size: 14px;
             color: #676a6c;
         }
     }
 </style>
 
 <script>
-    var pagination = require('./pagination');
+    var expand = require('./expand-cell')/*,
+        pagination = require('./pagination')*/;
 
     module.exports = {
         data: function() {
             return {};
         },
         props: {
-            titles: {
+            tableTitles: {
                 type: Object,
                 required: true
             },
-            datas: {
+            tableData: {
                 type: Array,
                 required: true
-            },
+            }/*,
             isShowPagination: {
                 type: Boolean,
                 default: false
@@ -81,13 +94,12 @@
             jumpToPage: {
                 type: Function,
                 required: this.isShowPagination
-            }
+            }*/
         },
         components: {
             //在当前组件注册pagination组件
-            pagination: pagination
-        },
-        created: function() {
+            //pagination: pagination,
+            'expand-cell': expand
         }
     }
 </script>
